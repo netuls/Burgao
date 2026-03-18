@@ -173,6 +173,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 }
 .menu-wrap{padding-bottom:100px;}
 
+/* TOAST LOJA FECHADA */
+.toast-fechada{
+  position:fixed;top:24px;left:50%;transform:translateX(-50%) translateY(-80px);
+  background:#1a1a1a;border:1px solid rgba(255,77,28,0.4);
+  color:#fff;border-radius:50px;
+  padding:12px 24px;
+  font-size:14px;font-weight:700;
+  display:flex;align-items:center;gap:8px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.5);
+  z-index:1000;
+  transition:transform .35s cubic-bezier(.32,.72,0,1), opacity .35s;
+  opacity:0;pointer-events:none;
+  white-space:nowrap;
+}
+.toast-fechada.show{transform:translateX(-50%) translateY(0);opacity:1;}
+.toast-icon{font-size:16px;}
+
 /* FECHADO OVERLAY */
 .closed-overlay{
   position:fixed;inset:0;
@@ -536,6 +553,15 @@ function updateCartBar(){
   document.getElementById('cart-bar').classList.toggle('hidden',n===0);
 }
 
+var _toastTimer = null;
+function mostrarToastFechada(){
+  var t = document.getElementById('toast-fechada');
+  if(!t) return;
+  t.classList.add('show');
+  if(_toastTimer) clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2500);
+}
+
 function estaAberto(){
   var h = new Date().getHours();
   var m = new Date().getMinutes();
@@ -545,7 +571,7 @@ function estaAberto(){
 
 function addItem(cat,idx,btn){
   if(!estaAberto()){
-    document.getElementById('closed-overlay').classList.add('show');
+    mostrarToastFechada();
     return;
   }
   const item=menu[cat].items[idx];
@@ -628,7 +654,7 @@ function renderMenu(cat){
 
 function openCart(){
   if(!estaAberto()){
-    document.getElementById('closed-overlay').classList.add('show');
+    mostrarToastFechada();
     return;
   }
   document.getElementById('overlay').classList.add('open');
