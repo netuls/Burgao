@@ -51,7 +51,6 @@ body::before {
 
 .wrapper { position:relative; z-index:1; max-width:430px; margin:0 auto; padding:0 16px 100px; }
 
-/* HEADER */
 header { text-align:center; padding:36px 0 22px; animation:fadeDown .6s ease both; }
 @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
 .logo-wrap { display:inline-flex; align-items:center; gap:12px; margin-bottom:6px; }
@@ -66,7 +65,6 @@ header { text-align:center; padding:36px 0 22px; animation:fadeDown .6s ease bot
 .logo-name { font-family:'Playfair Display',serif; font-size:30px; font-weight:700; background:linear-gradient(135deg,var(--pink-500),var(--pink-600)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .tagline { font-size:13px; color:var(--light); font-weight:400; }
 
-/* INSTALL BANNER */
 #install-banner {
   background:linear-gradient(135deg,#7b2d52,#3d1028);
   color:white; border-radius:20px; padding:16px 18px;
@@ -87,7 +85,6 @@ header { text-align:center; padding:36px 0 22px; animation:fadeDown .6s ease bot
   box-shadow:0 3px 12px rgba(255,45,138,.35);
 }
 
-/* STATUS */
 #status-badge {
   display:inline-flex; align-items:center; gap:6px;
   background:rgba(255,255,255,.75); border:1.5px solid var(--pink-200);
@@ -101,7 +98,6 @@ header { text-align:center; padding:36px 0 22px; animation:fadeDown .6s ease bot
 #status-badge.warn .dot { background:#f59e0b; box-shadow:0 0 6px #f59e0b; }
 #status-badge.warn { color:#92400e; border-color:#fde68a; background:rgba(255,251,235,.85); }
 
-/* CARDS */
 .card {
   background:var(--card-bg); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
   border-radius:24px; padding:24px 20px; margin-bottom:18px;
@@ -158,7 +154,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
 .btn-add:active { transform:scale(.97); }
 .btn-add:disabled { opacity:.5; cursor:not-allowed; }
 
-/* LIST */
 .empty-state { text-align:center; padding:28px 16px; color:var(--light); }
 .empty-state .empty-icon { font-size:40px; margin-bottom:10px; }
 .empty-state p { font-size:14px; line-height:1.6; }
@@ -198,7 +193,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
 }
 .ri-delete:active { color:var(--pink-600); background:var(--blush); }
 
-/* MODAL */
 #notif-modal {
   display:none; position:fixed; inset:0; z-index:9998;
   align-items:flex-end; justify-content:center;
@@ -232,7 +226,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
   cursor:pointer; box-shadow:0 4px 16px rgba(255,45,138,.3);
 }
 
-/* BLOCKED */
 #blocked-overlay {
   display:none; position:fixed; inset:0; z-index:10000;
   background:linear-gradient(160deg,#ffb3d1 0%,#ff4d94 50%,#c2006e 100%);
@@ -252,7 +245,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
 }
 .blocked-hint { font-size:12px; opacity:.7; margin-top:8px; }
 
-/* TOAST */
 #toast {
   position:fixed; bottom:28px; left:50%;
   transform:translateX(-50%) translateY(100px);
@@ -265,7 +257,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
 }
 #toast.show { transform:translateX(-50%) translateY(0); }
 
-/* iOS hint */
 .ios-hint {
   background:rgba(255,255,255,.7); border:1.5px solid var(--pink-200);
   border-radius:16px; padding:14px 16px; margin-bottom:16px;
@@ -284,7 +275,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
 <div class="deco">💗</div>
 <div class="deco">🌷</div>
 
-<!-- BLOCKED -->
 <div id="blocked-overlay">
   <div class="block-icon">🔔</div>
   <h2>Ativa as notificações, bb! 💕</h2>
@@ -293,7 +283,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
   <p class="blocked-hint">Se não aparecer a opção, vá nas configurações do celular → Notificações → e ative para este site.</p>
 </div>
 
-<!-- NOTIF MODAL -->
 <div id="notif-modal">
   <div class="notif-popup">
     <div class="notif-popup-icon">🔔</div>
@@ -318,7 +307,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
     <p class="tagline">seus lembretes com muito amor 💕</p>
   </header>
 
-  <!-- Install banner -->
   <div id="install-banner">
     <div class="ib-icon">📲</div>
     <div class="ib-text">
@@ -328,7 +316,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
     <button class="btn-install" onclick="installPWA()">Instalar</button>
   </div>
 
-  <!-- iOS hint -->
   <div class="ios-hint" id="ios-hint">
     📱 <strong>iPhone/iPad:</strong> Para instalar, toque em <strong>Compartilhar</strong> (⬆️) → <strong>"Adicionar à Tela de Início"</strong>. Assim as notificações funcionam melhor!
   </div>
@@ -338,7 +325,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
     <span id="status-text">Verificando…</span>
   </div>
 
-  <!-- FORM -->
   <div class="card">
     <div class="card-header">
       <div class="card-header-icon">📝</div>
@@ -357,7 +343,7 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
       </div>
       <div class="field">
         <label>Data 📅</label>
-        <input type="date" id="inp-date" id="inp-date">
+        <input type="date" id="inp-date">
       </div>
     </div>
 
@@ -376,7 +362,6 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
     </button>
   </div>
 
-  <!-- LIST -->
   <div class="card">
     <div class="card-header">
       <div class="card-header-icon">🗂️</div>
@@ -392,73 +377,125 @@ textarea { resize:none; min-height:88px; line-height:1.5; }
 </div>
 
 <script>
+// ===== CONFIG BACKEND =====
+const BACKEND_URL = 'https://camsnotify-backend.onrender.com';
+
 // ===== STATE =====
 let reminders = [];
 let selectedRepeat = 'once';
 let deferredInstallPrompt = null;
 let swRegistration = null;
 let checkInterval = null;
-let snoozeMsg = null;
-
-// ===== LOAD FROM CACHE (IndexedDB via Cache API) =====
-async function loadReminders() {
-  try {
-    const cache = await caches.open('camsnotify-v1');
-    const resp  = await cache.match('reminders-data');
-    if (resp) reminders = await resp.json();
-  } catch(e) {
-    reminders = JSON.parse(localStorage.getItem('cams_reminders') || '[]');
-  }
-}
-
-async function saveReminders() {
-  try {
-    const cache = await caches.open('camsnotify-v1');
-    await cache.put('reminders-data', new Response(JSON.stringify(reminders)));
-  } catch(e) {}
-  localStorage.setItem('cams_reminders', JSON.stringify(reminders));
-  // Atualiza SW
-  if (swRegistration && swRegistration.active) {
-    swRegistration.active.postMessage({ type:'SET_REMINDERS', reminders });
-  }
-}
+let currentModalMsg = '';
+let userId = null;
+let vapidPublicKey = null;
 
 // ===== INIT =====
 window.addEventListener('load', async () => {
-  await loadReminders();
+  userId = getOrCreateUserId();
   setDefaultDateTime();
-  renderList();
   detectPlatform();
   await initServiceWorker();
   checkPermissionState();
+  await loadVapidKey();
+  await loadRemindersFromServer();
+  renderList();
   startChecker();
 });
 
-function detectPlatform() {
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+// ===== USER ID =====
+function getOrCreateUserId() {
+  let id = localStorage.getItem('cams_user_id');
+  if (!id) {
+    id = 'user_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+    localStorage.setItem('cams_user_id', id);
+  }
+  return id;
+}
 
-  if (isIOS && !isStandalone) {
-    document.getElementById('ios-hint').classList.add('show');
+// ===== VAPID KEY =====
+async function loadVapidKey() {
+  try {
+    const res = await fetch(`${BACKEND_URL}/vapid-public-key`);
+    const data = await res.json();
+    vapidPublicKey = data.publicKey;
+  } catch(e) {
+    console.warn('Não conseguiu buscar VAPID key:', e);
   }
 }
 
-// ===== SERVICE WORKER =====
+// ===== LOAD / SAVE REMINDERS =====
+async function loadRemindersFromServer() {
+  try {
+    const res = await fetch(`${BACKEND_URL}/reminders/${userId}`);
+    if (res.ok) {
+      const data = await res.json();
+      reminders = data.reminders || [];
+      return;
+    }
+  } catch(e) {}
+  // fallback local
+  reminders = JSON.parse(localStorage.getItem('cams_reminders') || '[]');
+}
+
+async function saveReminders() {
+  localStorage.setItem('cams_reminders', JSON.stringify(reminders));
+  try {
+    await fetch(`${BACKEND_URL}/reminders`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, reminders }),
+    });
+  } catch(e) {
+    console.warn('Não salvou no servidor:', e);
+  }
+  if (swRegistration && swRegistration.active) {
+    swRegistration.active.postMessage({ type: 'SET_REMINDERS', reminders });
+  }
+}
+
+// ===== SERVICE WORKER + PUSH SUBSCRIPTION =====
 async function initServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
   try {
     swRegistration = await navigator.serviceWorker.register('./sw.js');
     console.log('SW registrado!');
-
-    // Periodic Background Sync (Android Chrome)
     if ('periodicSync' in swRegistration) {
       try {
         await swRegistration.periodicSync.register('check-reminders', { minInterval: 60 * 1000 });
-      } catch(e) { console.log('PeriodicSync não disponível'); }
+      } catch(e) {}
     }
   } catch(e) {
     console.log('SW falhou:', e);
   }
+}
+
+async function subscribePush() {
+  if (!swRegistration || !vapidPublicKey) return;
+  try {
+    let sub = await swRegistration.pushManager.getSubscription();
+    if (!sub) {
+      sub = await swRegistration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidPublicKey),
+      });
+    }
+    await fetch(`${BACKEND_URL}/subscribe`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, subscription: sub }),
+    });
+    console.log('Push subscription registrada!');
+  } catch(e) {
+    console.warn('Push subscription falhou:', e);
+  }
+}
+
+function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const rawData = atob(base64);
+  return Uint8Array.from([...rawData].map(c => c.charCodeAt(0)));
 }
 
 // ===== PWA INSTALL =====
@@ -492,6 +529,7 @@ function checkPermissionState() {
   }
   if (Notification.permission === 'granted') {
     setStatusOn();
+    subscribePush();
   } else if (Notification.permission === 'denied') {
     showBlocked();
   } else {
@@ -506,6 +544,7 @@ async function requestPermission() {
       setStatusOn();
       document.getElementById('blocked-overlay').classList.remove('show');
       showToast('✅ Notificações ativadas! 💕');
+      await subscribePush();
     } else {
       showBlocked();
     }
@@ -521,9 +560,16 @@ function showBlocked(msg) {
 function setStatusOn() {
   const b = document.getElementById('status-badge');
   b.className = 'on';
-  // Reaplica o elemento dot
   b.innerHTML = '<span class="dot"></span><span id="status-text">Notificações ativas ✨</span>';
   document.getElementById('btn-add').disabled = false;
+}
+
+function detectPlatform() {
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+  if (isIOS && !isStandalone) {
+    document.getElementById('ios-hint').classList.add('show');
+  }
 }
 
 // ===== CHECKER (foreground) =====
@@ -546,12 +592,10 @@ function checkReminders() {
     if (!r.active) return;
     const tMatch = r.time === nowTime;
     let should = false;
-
-    if      (r.repeat === 'once'     && r.date === nowDate && tMatch && !r.fired)            { should=true; r.fired=true; r.active=false; changed=true; }
-    else if (r.repeat === 'daily'    && tMatch && r.lastFired !== nowDate)                   { should=true; r.lastFired=nowDate; changed=true; }
-    else if (r.repeat === 'weekdays' && nowDay>=1 && nowDay<=6 && tMatch && r.lastFired !== nowDate) { should=true; r.lastFired=nowDate; changed=true; }
-    else if (r.repeat === 'weekends' && (nowDay===0||nowDay===6) && tMatch && r.lastFired !== nowDate) { should=true; r.lastFired=nowDate; changed=true; }
-
+    if      (r.repeat==='once'     && r.date===nowDate && tMatch && !r.fired)                              { should=true; r.fired=true; r.active=false; changed=true; }
+    else if (r.repeat==='daily'    && tMatch && r.lastFired!==nowDate)                                     { should=true; r.lastFired=nowDate; changed=true; }
+    else if (r.repeat==='weekdays' && nowDay>=1 && nowDay<=6 && tMatch && r.lastFired!==nowDate)           { should=true; r.lastFired=nowDate; changed=true; }
+    else if (r.repeat==='weekends' && (nowDay===0||nowDay===6) && tMatch && r.lastFired!==nowDate)         { should=true; r.lastFired=nowDate; changed=true; }
     if (should) fireReminder(r);
   });
 
@@ -559,7 +603,6 @@ function checkReminders() {
 }
 
 function fireReminder(r) {
-  // Notificação nativa
   if (Notification.permission === 'granted') {
     try {
       const n = new Notification('🌸 CamsNotify', {
@@ -577,7 +620,6 @@ function fireReminder(r) {
 }
 
 // ===== MODAL =====
-let currentModalMsg = '';
 function showModal(msg) {
   currentModalMsg = msg;
   document.getElementById('notif-popup-text').textContent = msg;
@@ -692,7 +734,6 @@ function escHtml(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-// Checar quando volta ao foco
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') checkReminders();
 });
